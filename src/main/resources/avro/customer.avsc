@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "namespace": "com.training",
+  "name": "Customer",
+  "version" : "12",
+  "fields": [
+    {"name": "first_name","type": "string", "doc" : "First name of customer"},
+    {"name": "last_name","type": "string", "doc" : "Last name of customer"},
+    {"name": "age","type": "int", "doc" : "Age at the time of the registration"},
+    {"name": "height","type": "float", "doc" : "Height at the time of the registration"},
+    {"name": "time","type": ["long", "null"], ",doc" : "Time of the registration"}
+  ]
+}
