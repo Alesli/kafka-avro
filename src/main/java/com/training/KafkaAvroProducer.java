@@ -28,7 +28,6 @@ public class KafkaAvroProducer {
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
         properties.put("schema.registry.url", schemaRegistry);
-
         schemaRegistryClient = new CachedSchemaRegistryClient(schemaRegistry, 10);
         kafkaProducer = new KafkaProducer<>(properties);
     }
@@ -41,10 +40,8 @@ public class KafkaAvroProducer {
                 .setHeight(182.7f)
                 .setTime(System.currentTimeMillis())
                 .build();
-
         try {
-
-            ProducerRecord<String, Customer> customerRecord = new ProducerRecord<>(topic, customer);
+            ProducerRecord<String, Customer> customerRecord = new ProducerRecord<>(topic, "key", customer);
             Headers headers = customerRecord.headers();
             Integer version = schemaRegistryClient.getVersion(topic + "-value", customer.getSchema());
             headers.add(new RecordHeader("schema-version", String.valueOf(version).getBytes()));
