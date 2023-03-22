@@ -1,8 +1,7 @@
-{
-  "type": "record",
+{"type": "record",
   "namespace": "com.training",
   "name": "Customer",
-  "version" : "12",
+  "version" : "1",
   "fields": [
     {"name": "first_name","type": "string", "doc" : "First name of customer"},
     {"name": "last_name","type": "string", "doc" : "Last name of customer"},

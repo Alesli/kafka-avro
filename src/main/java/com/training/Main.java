@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String topic = "avro-kafka";
+        String topic = "customer-registration";
         String kafkaServer = "http://localhost:9092";
         String schemaRegistry = "http://localhost:8081";
 
